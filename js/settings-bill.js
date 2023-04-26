@@ -31,19 +31,35 @@ const totalSettings = document.querySelector(".totalSettings");
 
 //add an event listener for when the 'Update settings' button is pressed
 updateSettings.addEventListener("click", function(){
+    const previousCallCost = callCostSettingBill; // store previous call cost
+    const previousSmsCost = smsCostSettingBill; // store previous SMS cost
+    
     callCostSettingBill = Number(callCostSetting.value);
     smsCostSettingBill = Number(smsCostSetting.value);
     warningLevel = Number(warningLevelSetting.value);
     criticalLevel = Number(criticalLevelSetting.value);
 
-    // update totals with new settings
-    callTotalOneSettings = 0;
-    smsTotalOneSettings = 0;
-    totalSettingsOne = 0;
-    callTotalSettings.innerHTML = callTotalOneSettings.toFixed(2);
-    smsTotalSettings.innerHTML = smsTotalOneSettings.toFixed(2);
-    totalSettings.innerHTML = totalSettingsOne.toFixed(2);
+    // update settings with new values
+    callCostSetting.value = callCostSettingBill.toFixed(2);
+    smsCostSetting.value = smsCostSettingBill.toFixed(2);
+    warningLevelSetting.value = warningLevel.toFixed(2);
+    criticalLevelSetting.value = criticalLevel.toFixed(2);
+
+    // update totals with new settings if they have been calculated before
+    if (totalSettingsOne !== 0) {
+        const callTotalDiff = callCostSettingBill - previousCallCost; // calculate difference in call cost
+        const smsTotalDiff = smsCostSettingBill - previousSmsCost; // calculate difference in SMS cost
+        callTotalOneSettings += callTotalDiff;
+        smsTotalOneSettings += smsTotalDiff;
+        totalSettingsOne = callTotalOneSettings + smsTotalOneSettings;
+        
+        // display the updated totals
+        callTotalSettings.innerHTML = callTotalOneSettings.toFixed(2);
+        smsTotalSettings.innerHTML = smsTotalOneSettings.toFixed(2);
+        totalSettings.innerHTML = totalSettingsOne.toFixed(2);
+    }
 });
+
 
 
 //add an event listener for when the add button is pressed
