@@ -17,7 +17,7 @@ const red = document.querySelector(".red")
 
 // add an event listener for when the add button is pressed
 addToBillBtn.addEventListener("click", function() {
-    const billType = billTypeText.value;
+    const billType = billTypeText.value.toLowerCase();
     if (billType === "sms") {
       smsTotal += 0.75;
     } else if (billType === "call") {

@@ -72,12 +72,12 @@ addBtn.addEventListener("click", function(){
 
     // Check if the total exceeds the warning or critical level and update the color
     if (totalSettingsOne >= criticalLevel) {
-        settingTotal.classList.add("danger");
+        totalSettings.classList.add("danger");
         addBtn.disabled = true;
-    } else if (totalSettingsOne >= warningLevel) {
-        settingTotal.classList.add("warning");
+    } else if (totalSettingsOne >= warningLevel){
+        totalSettings.classList.add("warning");
     } else {
-        settingTotal.classList.remove("warning", "danger");
+        totalSettings.classList.remove("warning", "danger");
         addBtn.disabled = false;
     }   
 });
