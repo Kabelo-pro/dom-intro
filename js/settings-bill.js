@@ -57,9 +57,22 @@ updateSettings.addEventListener("click", function(){
         callTotalSettings.innerHTML = callTotalOneSettings.toFixed(2);
         smsTotalSettings.innerHTML = smsTotalOneSettings.toFixed(2);
         totalSettings.innerHTML = totalSettingsOne.toFixed(2);
-    }
-});
 
+        // Check if the total exceeds the warning or critical level and update the color
+        if (totalSettingsOne >= criticalLevel) {
+            totalSettings.classList.add("danger");
+            addBtn.disabled = true;
+        } else if (totalSettingsOne >= warningLevel){
+            totalSettings.classList.add("warning");
+            addBtn.disabled = false;
+        } else {
+            totalSettings.classList.remove("warning", "danger");
+            addBtn.disabled = false;
+        }   
+    }
+
+    
+});
 
 
 //add an event listener for when the add button is pressed
@@ -87,13 +100,14 @@ addBtn.addEventListener("click", function(){
    
 
     // Check if the total exceeds the warning or critical level and update the color
-    if (totalSettingsOne >= criticalLevel) {
+    if (totalSettingsOne >= criticalLevelSetting.value) {
         totalSettings.classList.add("danger");
         addBtn.disabled = true;
-    } else if (totalSettingsOne >= warningLevel){
+    } else if (totalSettingsOne >= warningLevelSetting.value){
         totalSettings.classList.add("warning");
     } else {
         totalSettings.classList.remove("warning", "danger");
         addBtn.disabled = false;
     }   
 });
+
