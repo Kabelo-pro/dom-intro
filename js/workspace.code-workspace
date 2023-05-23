@@ -1,10 +1,10 @@
 {
 	"folders": [
 		{
-			"path": ".."
+			"path": "."
 		},
 		{
-			"path": "../../../bootcamp-tests/Bootcamp-functions"
+			"path": ".."
 		}
 	],
 	"settings": {}
