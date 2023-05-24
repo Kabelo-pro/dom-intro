@@ -42,6 +42,10 @@ updateSettings.addEventListener("click", function () {
     console.log(settings.getWarningLevel());
     console.log(settings.getCriticalLevel());
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 50a32859dd3cd22d96782479241d357df3fa8586
 });
 
 
@@ -68,5 +72,10 @@ addBtn.addEventListener("click", function () {
 
     // apply styling based on total cost and levels
 
+<<<<<<< HEAD
+=======
+
+    
+>>>>>>> 50a32859dd3cd22d96782479241d357df3fa8586
 });
 
