@@ -7,19 +7,7 @@ const smsCostSetting = document.querySelector(".smsCostSetting");
 const warningLevelSetting = document.querySelector(".warningLevelSetting");
 const criticalLevelSetting = document.querySelector(".criticalLevelSetting");
 var settings = BillWithSettings();
-settings.getCallCost
-settings.getCriticalLevel
-settings.getSmsCost
-settings.getTotalCallCost
-settings.getTotalCost
-settings.getWarningLevel
-settings.getTotalSmsCost
-settings.getWarningLevel
-settings.makeCall
-settings.sendSms
-settings.setCallCost
-settings.setCriticalLevel
-settings.setSmsCost
+
 //get a reference to the add button
 const addBtn = document.querySelector(".addBtn");
 
@@ -54,41 +42,6 @@ updateSettings.addEventListener("click", function () {
     console.log(settings.getWarningLevel());
     console.log(settings.getCriticalLevel());
 
-
-
-    // update settings with new values
-    // callCostSetting.value = callCostSettingBill.toFixed(2);
-    // smsCostSetting.value = smsCostSettingBill.toFixed(2);
-    // warningLevelSetting.value = warningLevel.toFixed(2);
-    // criticalLevelSetting.value = criticalLevel.toFixed(2);
-
-    // update totals with new settings if they have been calculated before
-    // if (totalSettingsOne !== 0) {
-    //     const callTotalDiff = callCostSettingBill - previousCallCost; // calculate difference in call cost
-    //     const smsTotalDiff = smsCostSettingBill - previousSmsCost; // calculate difference in SMS cost
-    //     callTotalOneSettings += callTotalDiff;
-    //     smsTotalOneSettings += smsTotalDiff;
-    //     totalSettingsOne = callTotalOneSettings + smsTotalOneSettings;
-
-    //     // display the updated totals
-    //     callTotalSettings.innerHTML = callTotalOneSettings.toFixed(2);
-    //     smsTotalSettings.innerHTML = smsTotalOneSettings.toFixed(2);
-    //     totalSettings.innerHTML = totalSettingsOne.toFixed(2);
-
-    //     // Check if the total exceeds the warning or critical level and update the color
-    //     if (totalSettingsOne >= criticalLevel) {
-    //         totalSettings.classList.add("danger");
-    //         addBtn.disabled = true;
-    //     } else if (totalSettingsOne >= warningLevel) {
-    //         totalSettings.classList.add("warning");
-    //         addBtn.disabled = false;
-    //     } else {
-    //         totalSettings.classList.remove("warning", "danger");
-    //         addBtn.disabled = false;
-    //     }
-    // }
-
-
 });
 
 
@@ -115,16 +68,5 @@ addBtn.addEventListener("click", function () {
 
     // apply styling based on total cost and levels
 
-
-    // Check if the total exceeds the warning or critical level and update the color
-    // if (totalSettingsOne >= criticalLevelSetting.value) {
-    //     totalSettings.classList.add("danger");
-    //     addBtn.disabled = true;
-    // } else if (totalSettingsOne >= warningLevelSetting.value) {
-    //     totalSettings.classList.add("warning");
-    // } else {
-    //     totalSettings.classList.remove("warning", "danger");
-    //     addBtn.disabled = false;
-    // }
 });
 
